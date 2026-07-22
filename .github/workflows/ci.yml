@@ -1,0 +1,42 @@
+name: CI
+
+# This project's top-level deps.edn pins langgraph directly via a
+# public :git/sha (which itself pins langchain the same way via its
+# own deps.edn) -- unlike sibling actors that use monorepo-relative
+# :local/root paths, this resolves on a bare single-repo checkout with
+# no sibling checkout needed. The :dev alias's :local/root override
+# (for monorepo-internal offline dev) is intentionally not used in CI.
+# README documents `clojure -M:test` / `clojure -M:run` directly (no
+# :dev prefix) as the standalone-fork commands -- this workflow uses
+# exactly those.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - uses: DeLaGuardo/setup-clojure@13.4
+        with: { cli: latest }
+      - name: clj-kondo (errors fail the build)
+        run: clojure -M:lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - uses: DeLaGuardo/setup-clojure@13.4
+        with: { cli: latest }
+      - name: test (advisor · governor · phase · store contract, real compiled StateGraph end-to-end)
+        run: clojure -M:test
+      - name: demo runner (compiled StateGraph, end-to-end)
+        run: clojure -M:run
