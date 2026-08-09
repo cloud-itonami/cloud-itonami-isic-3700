@@ -82,9 +82,15 @@ never remove an escalation.
 ## Development
 
 ```bash
-clojure -M:test   # run the full suite
-clojure -M:run    # walk the demo scenarios (sewerops.sim)
-clojure -M:lint    # clj-kondo
+clojure -M:test            # run the full suite
+clojure -M:run             # walk the demo scenarios (sewerops.sim)
+clojure -M:dev:render-html # build-time operator console via REAL actor (flagship item 2)
+clojure -M:lint            # clj-kondo
 ```
+
+| Path | Role |
+|---|---|
+| `src/sewerops/render_html.clj` | build-time `docs/samples/operator-console.html` via the real actor stack (flagship checklist item 2) |
+| `docs/samples/operator-console.html` | generated sample console (do not hand-edit; regenerate with `:render-html`) |
 
 AGPL-3.0-or-later, forkable by any qualified operator. Part of cloud-itonami.
