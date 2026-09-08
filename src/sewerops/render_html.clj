@@ -23,7 +23,7 @@
   Usage: `clojure -M:dev:render-html [out-file]`
   (default `docs/samples/operator-console.html`)."
   (:require [jp-go-dds.skin]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [sewerops.store :as store]
             [sewerops.advisor :as advisor]
             [sewerops.operation :as op]
