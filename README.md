@@ -90,7 +90,7 @@ clojure -M:lint            # clj-kondo
 
 | Path | Role |
 |---|---|
-| `src/sewerops/render_html.clj` | build-time `docs/samples/operator-console.html` via the real actor stack (flagship checklist item 2) |
+| `src/sewerops/render_html.cljk` | build-time `docs/samples/operator-console.html` via the real actor stack (flagship checklist item 2) |
 | `docs/samples/operator-console.html` | generated sample console (do not hand-edit; regenerate with `:render-html`) |
 
 AGPL-3.0-or-later, forkable by any qualified operator. Part of cloud-itonami.
