@@ -82,10 +82,10 @@ never remove an escalation.
 ## Development
 
 ```bash
-clojure -M:test            # run the full suite
-clojure -M:run             # walk the demo scenarios (sewerops.sim)
-clojure -M:dev:render-html # build-time operator console via REAL actor (flagship item 2)
-clojure -M:lint            # clj-kondo
+kbb -M:test            # run the full suite
+kbb -M:run             # walk the demo scenarios (sewerops.sim)
+kbb -M:dev:render-html # build-time operator console via REAL actor (flagship item 2)
+kbb -M:lint            # clj-kondo
 ```
 
 | Path | Role |
