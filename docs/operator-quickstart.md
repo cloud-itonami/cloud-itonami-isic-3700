@@ -20,7 +20,7 @@ cd cloud-itonami-isic-3700
 ## 2. Run tests
 
 ```bash
-clojure -M:test
+kbb -M:test
 ```
 
 Expect green if maturity is `implemented`. Fix failures before operating.
@@ -34,7 +34,7 @@ open docs/index.html   # or: python3 -m http.server -d docs 8080
 Operator console sample (built from the REAL actor stack — flagship item 2):
 
 ```bash
-clojure -M:dev:render-html          # regenerates docs/samples/operator-console.html
+kbb -M:dev:render-html          # regenerates docs/samples/operator-console.html
 open docs/samples/operator-console.html
 ```
 
