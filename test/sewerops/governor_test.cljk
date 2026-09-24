@@ -2,7 +2,7 @@
   "Pure unit tests of `sewerops.governor/check` against hand-built
   proposals -- the fast, focused complement to `governor-contract-
   test`'s full-graph integration coverage."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [sewerops.governor :as gov]
             [sewerops.store :as store]))
 

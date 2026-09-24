@@ -10,7 +10,7 @@
     proposal ALWAYS interrupts for human budget sign-off (never auto,
     at any phase), and every decision (commit OR hold) leaves exactly
     one ledger fact."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [langgraph.graph :as g]
             [sewerops.advisor :as advisor]
             [sewerops.store :as store]
